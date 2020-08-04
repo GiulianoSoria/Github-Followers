@@ -61,7 +61,7 @@ class FavoritesListVC: GFDataLoadingVC {
     
     func updateUI(with favorites: [Follower]) {
         if favorites.isEmpty {
-            self.showEmptyStateView(with: "No Favorites?\nAdd one on the follower screen", view: self.view)
+            self.showEmptyStateView(with: "No Favorites?\nAdd one on the follower screen", in: self.view)
         } else {
             self.favorites = favorites
             DispatchQueue.main.async {

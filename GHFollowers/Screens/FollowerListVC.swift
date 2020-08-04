@@ -48,7 +48,6 @@ class FollowerListVC: GFDataLoadingVC {
     }
 
     func configureViewContoller() {
-        navigationController?.isNavigationBarHidden = false
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -68,6 +67,7 @@ class FollowerListVC: GFDataLoadingVC {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search for a username"
+        searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
     }
     
@@ -97,7 +97,7 @@ class FollowerListVC: GFDataLoadingVC {
         
         if self.followers.isEmpty {
             let message = "This user doesn't have any followers. Go follow them 😀."
-            DispatchQueue.main.async { self.showEmptyStateView(with: message, view: self.view) }
+            DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
             return
         }
         
