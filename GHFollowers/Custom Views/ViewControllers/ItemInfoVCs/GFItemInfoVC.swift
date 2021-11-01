@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ItemInfoVCDelegate: class {
+protocol ItemInfoVCDelegate: AnyObject {
     func didTapGitHubPRofile(for user: User)
     func didTapGetFollowers(for user: User)
 }
